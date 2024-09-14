@@ -1,38 +1,4 @@
-// import { Children } from "react";
-// import AppReducer from './AppReducer';
-// import React , { createContext, useReducer} from "react";
-// //Initial state
-// const initialState = {
-//     transactions:
-//     [
-//           { id: 1, text: 'Flower', amount: -20 },
-//           { id: 2, text: 'Salary', amount: 300 },
-//           { id: 3, text: 'Book', amount: -10 },
-//           { id: 4, text: 'Camera', amount: 150 }
-//         ]
-// }
-// // Create Context
-// export const GlobalContext = createContext(initialState);
 
-// //provider component
-// export const GlobalProvider=({children}) =>{
-//     const [state,dispatch]= useReducer(AppReducer,initialState);
-//     Actions
-//     function deleteTransaction(id){
-//         dispatch({
-//             type:'DELETE_TRANSACTION',
-//             payload: id
-//         });
-//     }
-    
-      
-//     return (<GlobalContext.Provider value ={{
-//         transactions:state.transactions,
-//         deleteTransaction
-//     }}>
-//         {children}
-//     </GlobalContext.Provider>);
-// }
 import React, { createContext, useReducer, useEffect } from 'react';
 import AppReducer from './AppReducer';
 import axios from 'axios';
@@ -66,20 +32,7 @@ export const GlobalProvider = ({ children }) => {
     }
   };
 
-  // const deleteTransaction = async (id) => {
-  //   try {
-  //     await axios.delete(`http://localhost:5000/api/v1/transactions/${id}`);
-  //     dispatch({
-  //       type: 'DELETE_TRANSACTION',
-  //       payload: id
-  //     });
-  //   } catch (error) {
-  //     dispatch({
-  //       type: 'TRANSACTION_ERROR',
-  //       payload: error.message
-  //     });
-  //   }
-  // };
+ 
   const deleteTransaction = async (id) => {
     try {
       await axios.delete(`http://localhost:5000/api/v1/transactions/${id}`);
