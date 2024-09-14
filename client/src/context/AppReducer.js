@@ -1,16 +1,4 @@
-// import Transaction from "../components/Transaction"
 
-// export default (state, action) =>{
-//     switch(action.type){
-//         case 'DELETE_TRANSACTION':
-//             return {
-//                 ...state,
-//                 Transactions: state.transations.filter(transation=>transation.id !==action.payload)
-//             }
-//         default:
-//             return state
-//     }
-// }
 const AppReducer = (state, action) => {
   switch (action.type) {
     case 'GET_TRANSACTIONS':
