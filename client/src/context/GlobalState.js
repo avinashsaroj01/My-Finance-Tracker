@@ -12,6 +12,12 @@ const initialState = {
 // Create context
 export const GlobalContext = createContext(initialState);
 
+// Define the base URL based on the environment
+
+const API_BASE_URL = process.env.NODE_ENV === 'production'
+  ? 'https://my-finance-tracker-vikd.vercel.app/'  
+  : 'http://localhost:5000/api';
+
 // Provider component
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);

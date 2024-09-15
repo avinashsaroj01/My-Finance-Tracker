@@ -15,6 +15,12 @@ const transactions = require('./routes/transactions');
 
 const app = express();
 
+const allowedOrigins = ['https://my-finance-tracker-vikd.vercel.app/'];
+app.use(cors({
+  origin: allowedOrigins
+}));
+
+
 app.use(express.json());
 
 // Enable CORS
