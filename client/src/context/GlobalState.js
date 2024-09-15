@@ -15,7 +15,7 @@ export const GlobalContext = createContext(initialState);
 // Define the base URL based on the environment
 
 const API_BASE_URL = process.env.NODE_ENV === 'production'
-  ? 'https://my-finance-tracker-vikd-bixl7b0iy-avinash-sorojs-projects.vercel.app/'  
+  ? 'https://my-finance-tracker-vikd-bixl7b0iy-avinash-sorojs-projects.vercel.app/api'  
   : 'http://localhost:5000/api';
 
 // Provider component
